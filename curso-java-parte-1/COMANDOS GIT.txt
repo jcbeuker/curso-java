@@ -1,0 +1,134 @@
+Provedor de Hospedagem http://www.github.com/
+* ADICIONAR REPOSITÓRIO REMOTO
+git remote add origin https://github.com/[seu_nome_de_usuario]/curso-git.git
+
+* CRIAR CONTA NO GITHUB
+ssh-keygen -t rsa -C "seu_email@provedor.com"
+
+* CLONAR REPOSITÓRIO
+git clone https://github.com/jcfonsecagit/repositorio.git
+
+* ENVIO DOS COMMITS PARA O REPOSITÓRIO REMOTO
+git push origin master
+
+*ENVIO DOS COMMITS DAS BRANCHES LOCAIS PARA O MASTER REMOTO
+	git checkout master >> git pull
+	
+*DEFINIR A BRANCH BASE DOS COMMITS
+		git checkout desenv >> git rebase master
+		
+*LEVAR OS COMMITS PARA A MASTER
+			git checkout master >> git merge desenv >> git push
+		
+*DESFAZER ALTERAÇÃO EM ARQUIVO
+	Que não foi feito add
+		git checkout nome_arquivo
+	Que já foi feito o add	
+		git reset Head nome_arquivo
+		*obs.: Head é o commit mais recente
+	Voltar commit anterior
+		git reset id_do_commit
+	Voltar para commit mais antigo
+		git revert id_do_commit_mais_antigo
+
+* SINCRONIZAR ALTERAÇÕES COM O REPOSITÓRIO REMOTO
+git pull origin master
+
+* VER ARQUIVOS QUE FORAM MODIFICADOS NOS COMMITS
+git whatchanged
+
+* VER TAGS
+git tag
+
+*CRIAR BRANCH chamada 'design'
+git branch design
+
+*CRIAR E TROCAR LOCAL BRANCH chamada 'design'
+git branch -b design
+
+* VERIFICAR BRANCHES EXISTENTES (O * indica a branch atual)
+	**local
+		git branch
+	** remota
+		git branch -r
+	**local e remota
+		git branch -a
+
+*COPIAR BRANCH REMOTA
+git branch -t design origin/design		
+		
+*ATUALIZAR BRANCH
+git rebase master desenvolvimento				
+	git rebase --continue
+		
+* MUDAR DE BRANCH
+git checkout design
+
+* ENVIANDO UMA BRANCH LOCAL PARA O REPOSITÓRIO REMOTO (o primeiro nome é o do repositorio e o segundo é o da branch)
+git push origin design
+
+* INDICAR O CAMINHO DA BRANCH REMOTA PARA A LOCAL
+git push -u origin design
+
+* ATRELAR BRANCH REMOTA À LOCAL
+git push origin master -u 
+ou
+git push origin master --set-upstream
+
+* VER COMO ESTAVA NA VERSÃO 1.0
+
+* COMPARAR VERSÕES
+git diff v0.1 v0.2
+
+* VER QUEM ALTEROU
+git blame index.html
+Para sair do blame, basta apertar a tecla q
+
+* CHECAR INSTALAÇÃO
+git
+
+* CRIAR PASTA
+mkdir curso-git
+
+* INICIALIZAR REPOSITÓRIO
+git init
+
+* VER ARQUIVOS QUE PERTENCEM AO REPOSITÓRIO
+git ls-files
+
+* VER STATUS DOS ARQUIVOS
+git status
+
+* ADICIONAR ARQUIVO AO TRACK
+git add index.html
+
+* RESPONSÁVEL PELAS ALTERAÇÕES NO REPOSITÓRIO ATUAL
+git config user.name "João Carlos Fonseca"
+git config user.email "jcfonsecagit@gmail.com"
+
+* RESPONSÁVEL PELAS ALTERAÇÕES EM TODO O SISTEMA
+git config --global user.name "João Carlos Fonseca"
+git config --global user.email "jcfonsecagit@gmail.com"
+
+* ADICIONAR ARQUIVO PARA O COMMIT
+git add index.html
+	** adicionar mais de um arquivo simultaneamente
+		git add caminhoDeUmDiretório
+		ou git add .
+	** interativo
+		git add -i
+		
+* AJUDA NO COMMIT F1
+git commit --help
+	** todos os arquivos modificados ou removidos
+		git commit -a
+
+* LOG COM ALTERAÇÕES
+	git log -p
+
+* APENAS QUANTIDADE DE LINHAS
+	git log -stat
+	
+* GIT LOG QUANTIDADE DE INFORMAÇÕES
+	git log --pretty=oneline
+		* short, medium, full, fuller, email, raw
