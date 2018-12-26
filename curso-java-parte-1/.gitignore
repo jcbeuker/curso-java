@@ -1,1 +1,17 @@
 /.metadata/
+/ControleBonificacao.class
+/Designer.class
+/EditorVideo.class
+/Funcionario.class
+/Gerente.class
+/TesteFuncionario.class
+/TesteGerente.class
+/TesteReferencias.class
+/Cliente.class
+/Conta.class
+/CriaConta.class
+/TestaBanco.class
+/TestaContaSemCliente.class
+/TestaMetodo.class
+/TesteSacaNeagivo.class
+/package-info.class
